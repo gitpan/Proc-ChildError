@@ -2,10 +2,11 @@ NAME
     Proc::ChildError - Explain process child error
 
 VERSION
-    version 0.01
+    This document describes version 0.02 of Proc::ChildError (from Perl
+    distribution Proc-ChildError), released on 2014-11-18.
 
 FUNCTIONS
-  explain_child_error($child_error, $os_error) => STR
+  explain_child_error([\%opts, ]$child_error, $os_error) => STR
     Produce a string description of an error number. $child_error defaults
     to $? if not specified. $os_error defaults to $! if not specified.
 
@@ -15,13 +16,24 @@ FUNCTIONS
      died with signal 15, with coredump
      exited with value 3
 
+    An options hashref can be specified as the first argument to add
+    information. Currently known keys:
+
+    *   prog => str
+
+        Program name/path, to include in error messages:
+
+         /usr/bin/foo failed to execute: Permission denied (-1)
+         foo died with signal 15, with coredump
+         /usr/bin/foo exited with value 3
+
 HOMEPAGE
     Please visit the project's homepage at
     <https://metacpan.org/release/Proc-ChildError>.
 
 SOURCE
     Source repository is at
-    <https://github.com/sharyanto/perl-Proc-ChildError>.
+    <https://github.com/perlancar/perl-Proc-ChildError>.
 
 BUGS
     Please report any bugs or feature requests on the bugtracker website
@@ -31,10 +43,10 @@ BUGS
     to an existing test-file that illustrates the bug or desired feature.
 
 AUTHOR
-    Steven Haryanto <stevenharyanto@gmail.com>
+    perlancar <perlancar@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2014 by Steven Haryanto.
+    This software is copyright (c) 2014 by perlancar@cpan.org.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
